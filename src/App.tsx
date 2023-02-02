@@ -1,5 +1,15 @@
 import { type } from "@testing-library/user-event/dist/type";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import Button from "./components/Button";
+import Context, { ThemeContext } from "./components/Context";
+import Box from "./components/Context/Box";
+import User from "./components/Context/User";
+import Heading from "./components/Heading";
+import Input from "./components/Input";
+import Props from "./components/props";
+import PropsCss from "./components/PropsCss";
+import Reducer from "./components/Reducer";
+import LoggedIn from "./components/State/LoggedIn";
 
 function App() {
   //String :
@@ -182,21 +192,80 @@ function App() {
   //   name.push("Karan");
   //   console.log("name:", name);
 
-  // continue with 18 video
+  // const add = (a: number): boolean => {
+  //   if (typeof a === "number") {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // };
+  // const res = add(2);
+  // console.log(res);
 
-  
-  const add = (a: number): boolean => {
-    if (typeof a === "number") {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  const res = add(2);
-  console.log(res);
+  // ===========================================React=====================
+
+  // const obj = {
+  //   name: "harsh",
+  //   email: "harsh@gmail.com",
+  //   age: 21,
+  //   isLoggin: false,
+  // };
+
+  const namelist = [
+    {
+      firstName: "Harsh",
+      lastName: "Savaliya",
+    },
+    {
+      firstName: "karan",
+      lastName: "Dudhat",
+    },
+    {
+      firstName: "jay",
+      lastName: "Dhameliya",
+    },
+  ];
+
   return (
     <>
-      <div>Harsh</div>
+      {/* <Props {...obj}/> */}
+      {/* <Props names={namelist} /> */}
+      {/* <Props status="loading" /> */}
+      {/* <Props>Hello I am Children of Props</Props>
+      <Heading>I am children of Haeding</Heading>
+      <Heading>
+        <Props>I am Sub Children of Heading</Props>
+      </Heading> */}
+      {/* 
+      <Button
+        handleClick={(event, id) => {
+          console.log("Button Clicked..", event, "id :", id);
+        }}
+      /> */}
+
+      {/* <Input
+        value="value"
+        handleChange={(event) => {
+          console.log("onChange Event", event);
+        }}
+      /> */}
+
+      {/* <PropsCss styles={{
+        border: "1px solid red",
+        padding: "10px 30px",
+        width: "50%",
+        textAlign: "center",
+        backgroundColor: "green",
+        color: "#FFFFFF",
+      }}/> */}
+
+      {/* <LoggedIn /> */}
+      {/* <Reducer/> */}
+
+      <Context>
+        <Box />
+        <User />
+      </Context>
     </>
   );
 }
