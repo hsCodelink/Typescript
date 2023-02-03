@@ -1,15 +1,24 @@
 import { type } from "@testing-library/user-event/dist/type";
 import { useContext, useEffect } from "react";
+import Login from "./components/Authentication/login";
+import Private from "./components/Authentication/Private";
+import Profile from "./components/Authentication/Profile";
 import Button from "./components/Button";
 import Context, { ThemeContext } from "./components/Context";
 import Box from "./components/Context/Box";
 import User from "./components/Context/User";
+import List from "./components/Generic";
 import Heading from "./components/Heading";
+import Btn from "./components/Html/Btn";
 import Input from "./components/Input";
 import Props from "./components/props";
 import PropsCss from "./components/PropsCss";
 import Reducer from "./components/Reducer";
+import Refhook from "./components/Refhook";
+import Mutable from "./components/Refhook/Mutable";
+import Restriction from "./components/Restriction";
 import LoggedIn from "./components/State/LoggedIn";
+import Tamplatelitrature from "./components/Tamplatelitrature";
 
 function App() {
   //String :
@@ -262,10 +271,44 @@ function App() {
       {/* <LoggedIn /> */}
       {/* <Reducer/> */}
 
-      <Context>
+      {/* <Context>
         <Box />
         <User />
-      </Context>
+      </Context> */}
+      {/* <Refhook/>
+      <Mutable/> */}
+      {/* <Login/> */}
+      {/* <Private isLoggedIn={true} Component={Profile}/> */}
+      {/* <List
+        items={["Harsh", "Karan", "Jay"]}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+      {/* <List
+        items={[
+          {
+            firstName: "Harsh",
+            lastName: "Savaliya",
+          },
+          {
+            firstName: "Karan",
+            lastName: "Dudhat",
+          },
+          {
+            firstName: "Jay",
+            lastName: "Dhameliya",
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      /> */}
+      {/* 
+      <Restriction value={0} isZero />
+      <Restriction value={10} isPositive />
+      <Restriction value={-10} isNagative /> */}
+
+      {/* <Tamplatelitrature position="center--bottom"/> */}
+      <Btn variant="primary" onClick={()=>console.log('clicked primary')}>Primary button</Btn>
+      <Btn variant="secondary"  onClick={()=>console.log('clicked secondary')}>Secondary button</Btn>
     </>
   );
 }

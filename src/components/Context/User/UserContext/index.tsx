@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 export type AuthUser = {
   name: string;
@@ -14,18 +14,18 @@ type userContextType = {
   setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>
 };
 
-const userContext = createContext<userContextType |null>(null);
+const UserContextProvider = createContext<userContextType |null>(null);
 
 const UserContext = ({ children }: userType) => {
   const [user, setUser] = useState<AuthUser | null>(null);
   return (
     <>
-      <userContext.Provider value={{user, setUser}}>
+      <UserContextProvider.Provider value={{user, setUser}}>
         {children}
-      </userContext.Provider>
+      </UserContextProvider.Provider>
     </>
   );
 };
 
 export default UserContext;
-export {userContext}
+export {UserContextProvider}

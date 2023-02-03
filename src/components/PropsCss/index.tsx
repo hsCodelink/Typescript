@@ -3,7 +3,7 @@ type propsCssType = {
   styles: React.CSSProperties;
 };
 
-const PropsCss = ({styles}:propsCssType) => {
+const PropsCss = ({ styles }: propsCssType) => {
   return (
     <>
       <div style={styles}>PropsCss</div>
