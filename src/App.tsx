@@ -393,7 +393,7 @@ function App() {
         {" "}
       </Generics> */}
 
-      <Test data={[
+      {/* <Test data={[
         {
           firstName:"Harsh",
           lastName:"Savaliya"
@@ -406,7 +406,7 @@ function App() {
           firstName:"jay",
           lastName:"Dhameliya"
         },
-      ]}/>
+      ]}/> */}
     </>
   );
 }
