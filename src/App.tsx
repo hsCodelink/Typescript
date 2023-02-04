@@ -10,8 +10,10 @@ import User from "./components/Context/User";
 import List from "./components/Generic";
 import Heading from "./components/Heading";
 import Btn from "./components/Html/Btn";
+import Custome from "./components/Html/Custome";
 import Input from "./components/Input";
-import Props from "./components/props";
+import Polymorphic from "./components/Polymorphic";
+import Props from "./components/Props";
 import PropsCss from "./components/PropsCss";
 import Reducer from "./components/Reducer";
 import Refhook from "./components/Refhook";
@@ -21,18 +23,18 @@ import LoggedIn from "./components/State/LoggedIn";
 import Tamplatelitrature from "./components/Tamplatelitrature";
 
 function App() {
-  //String :
+  // String :
   // const name: string = "harsh";
 
-  //Number array:
+  // Number array:
   // const a: number[] = [1, 2, 3, 4, 5];
   // console.log(a);
 
-  //boolen:
+  // boolen:
   // const mixed: any[] = ["Harsh", 10, false];
   // console.log(mixed);
 
-  //obj:
+  // obj:
   // const user = {
   //   name: String,
   //   age: Number,
@@ -119,7 +121,7 @@ function App() {
   // const res = checkDataType("2");
   // console.log(res);
 
-  //Reusable data type:
+  // Reusable data type:
 
   // type objType = {
   //   name: String;
@@ -151,8 +153,8 @@ function App() {
   // arr.push("Jay")
   // console.log(arr);
 
-  //Union value in typescript <--- similer to return type arrayF:
-  // const data: string | number | boolean | any =;
+  // Union value in typescript <--- similer to return type arrayF:
+  // const data: string | number | boolean | any = "Harsh";
   // console.log(typeof data);
 
   // literal data type in typescript:
@@ -220,20 +222,20 @@ function App() {
   //   isLoggin: false,
   // };
 
-  const namelist = [
-    {
-      firstName: "Harsh",
-      lastName: "Savaliya",
-    },
-    {
-      firstName: "karan",
-      lastName: "Dudhat",
-    },
-    {
-      firstName: "jay",
-      lastName: "Dhameliya",
-    },
-  ];
+  // const namelist = [
+  //   {
+  //     firstName: "Harsh",
+  //     lastName: "Savaliya",
+  //   },
+  //   {
+  //     firstName: "karan",
+  //     lastName: "Dudhat",
+  //   },
+  //   {
+  //     firstName: "jay",
+  //     lastName: "Dhameliya",
+  //   },
+  // ];
 
   return (
     <>
@@ -282,8 +284,8 @@ function App() {
       {/* <List
         items={["Harsh", "Karan", "Jay"]}
         onClick={(item) => console.log(item)}
-      />
-      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+      /> */}
+      {/* <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
       {/* <List
         items={[
           {
@@ -307,8 +309,30 @@ function App() {
       <Restriction value={-10} isNagative /> */}
 
       {/* <Tamplatelitrature position="center--bottom"/> */}
-      <Btn variant="primary" onClick={()=>console.log('clicked primary')}>Primary button</Btn>
-      <Btn variant="secondary"  onClick={()=>console.log('clicked secondary')}>Secondary button</Btn>
+
+      {/* <Btn variant="primary" onClick={()=>console.log('clicked primary')}>Primary button</Btn>
+      <Btn variant="secondary"  onClick={()=>console.log('clicked secondary')}>Secondary button</Btn> */}
+
+      <Custome
+        styles={{
+          backgroundColor: "red",
+          color: "#FFFFFF",
+          textAlign: "center",
+          
+        }}
+      />
+      {/* <Polymorphic as="h1" size="lg">
+        Heading
+      </Polymorphic>
+      <Polymorphic as="p" size="md">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, maiores?
+      </Polymorphic>
+      <Polymorphic as="h2" size="lg" color="secondary">
+        h2
+      </Polymorphic>
+      <Polymorphic as="label" size="sm" color="secondary">
+        label
+      </Polymorphic> */}
     </>
   );
 }

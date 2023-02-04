@@ -11,7 +11,7 @@ const Mutable = () => {
   useEffect(() => {
     interValRef.current = window.setInterval(() => {
       setTimer((timer) => timer + 1);
-    }, 500);
+    }, 100);
     return () => {
       stopTimer();
     };

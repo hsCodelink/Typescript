@@ -1,4 +1,3 @@
-import React from "react";
 export type profiletype = {
   name: string;
   email: string;
