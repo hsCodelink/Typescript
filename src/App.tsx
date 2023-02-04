@@ -1,4 +1,5 @@
 import { type } from "@testing-library/user-event/dist/type";
+import { log } from "console";
 import { useContext, useEffect } from "react";
 import Login from "./components/Authentication/login";
 import Private from "./components/Authentication/Private";
@@ -7,7 +8,9 @@ import Button from "./components/Button";
 import Context, { ThemeContext } from "./components/Context";
 import Box from "./components/Context/Box";
 import User from "./components/Context/User";
+import Generics from "./components/Generic";
 import List from "./components/Generic";
+import Test from "./components/Generic/Test";
 import Heading from "./components/Heading";
 import Btn from "./components/Html/Btn";
 import Custome from "./components/Html/Custome";
@@ -237,6 +240,27 @@ function App() {
   //   },
   // ];
 
+  // type obj = {
+  //   x: number;
+  //   y: string;
+  // };
+  // type keyObj = keyof obj;
+
+  // function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+  //   return obj[key];
+  // }
+
+  // let x = { a: 1, b: 2, c: 3, d: 4 };
+
+  // console.log(getProperty(x, "b"));
+
+  class Point {
+    x = 1;
+    y = 5;
+  }
+
+  const pt = new Point();
+  console.log(`${pt.x}, ${pt.y}`);
   return (
     <>
       {/* <Props {...obj}/> */}
@@ -312,15 +336,14 @@ function App() {
 
       {/* <Btn variant="primary" onClick={()=>console.log('clicked primary')}>Primary button</Btn>
       <Btn variant="secondary"  onClick={()=>console.log('clicked secondary')}>Secondary button</Btn> */}
-
+      {/* 
       <Custome
         styles={{
           backgroundColor: "red",
           color: "#FFFFFF",
           textAlign: "center",
-          
         }}
-      />
+      /> */}
       {/* <Polymorphic as="h1" size="lg">
         Heading
       </Polymorphic>
@@ -333,6 +356,57 @@ function App() {
       <Polymorphic as="label" size="sm" color="secondary">
         label
       </Polymorphic> */}
+
+      {/* <Generics
+        items={[
+          {
+            firstName: "Harsh",
+            lastName: "Savaliya",
+          },
+          {
+            firstName: "Karan",
+            lastName: "Dudhat",
+          },
+          {
+            firstName: "Jay",
+            lastName: "Dhameliya",
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      /> */}
+      {/* <Generics
+        html={
+          <div>
+            <h1>Harsh</h1>
+            <p>dshfghgsfgshf</p>
+            <button
+              onClick={(e) => {
+                console.log(e);
+              }}
+            >
+              clicked Me
+            </button>
+            {false ? "dark" : "light"}
+          </div>
+        }
+      >
+        {" "}
+      </Generics> */}
+
+      <Test data={[
+        {
+          firstName:"Harsh",
+          lastName:"Savaliya"
+        },
+        {
+          firstName:"Karan",
+          lastName:"Dudhat"
+        },
+        {
+          firstName:"jay",
+          lastName:"Dhameliya"
+        },
+      ]}/>
     </>
   );
 }
