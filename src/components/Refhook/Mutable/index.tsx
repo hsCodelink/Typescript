@@ -25,7 +25,7 @@ const Mutable = () => {
           stopTimer();
         }}
       >
-        Click me
+        Stop me
       </button>
     </>
   );

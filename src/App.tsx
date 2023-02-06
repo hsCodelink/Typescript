@@ -1,6 +1,6 @@
 import { type } from "@testing-library/user-event/dist/type";
 import { log } from "console";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Login from "./components/Authentication/login";
 import Private from "./components/Authentication/Private";
 import Profile from "./components/Authentication/Profile";
@@ -8,6 +8,7 @@ import Button from "./components/Button";
 import Context, { ThemeContext } from "./components/Context";
 import Box from "./components/Context/Box";
 import User from "./components/Context/User";
+import Form from "./components/Form";
 import Generics from "./components/Generic";
 import List from "./components/Generic";
 import Test from "./components/Generic/Test";
@@ -15,6 +16,7 @@ import Heading from "./components/Heading";
 import Btn from "./components/Html/Btn";
 import Custome from "./components/Html/Custome";
 import Input from "./components/Input";
+import Never from "./components/Never";
 import Polymorphic from "./components/Polymorphic";
 import Props from "./components/Props";
 import PropsCss from "./components/PropsCss";
@@ -22,6 +24,7 @@ import Reducer from "./components/Reducer";
 import Refhook from "./components/Refhook";
 import Mutable from "./components/Refhook/Mutable";
 import Restriction from "./components/Restriction";
+import Selecte from "./components/Selecte";
 import LoggedIn from "./components/State/LoggedIn";
 import Tamplatelitrature from "./components/Tamplatelitrature";
 
@@ -254,14 +257,73 @@ function App() {
 
   // console.log(getProperty(x, "b"));
 
-  class Point {
-    x = 1;
-    y = 5;
-  }
+  // class Point {
+  //   x = 1;
+  //   y = 5;
+  // }
 
-  const pt = new Point();
-  console.log(`${pt.x}, ${pt.y}`);
+  // const pt = new Point();
+  // console.log(`${pt.x}, ${pt.y}`);
+  // type Point = { x: number; y: number };
+  // type P = keyof Point;
+
+  // type Person = { age: number; name: string; alive: boolean };
+  // type Age = Person["age"];
+  // numebr
+
+  // const [isLoading, setState] = useState(false);
+  // const load = (aPromise: Promise<any>) => {
+  //   setState(true);
+  //   return aPromise.finally(() => setState(false));
+  // }; // infers [boolean, typeof load] instead of (boolean | typeof load)[]
+
+  // useEffect(() => {
+  //   console.log("isLoading: ", isLoading);
+  // }, [isLoading]);
+
+  // type Example1 = Dog extends Animal ? number : string;
+  // console.log(Example1);
+
+  // type Laptop = {
+  //   id: string;
+  //   model: string;
+  //   releaseDate: string;
+  // };
+
+  // type LaptopKeys = keyof Laptop;
+
+  // const leptops = [
+  //   {
+  //     id: 1,
+  //     title: "hp",
+  //     model: 2002,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "dell",
+  //     model: 2005,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "sony",
+  //     model: 2008,
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "mi",
+  //     model: 2018,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "panasonic",
+  //     model: 2012,
+  //   },
+  // ];
+
+
+  
   return (
+    // [isLoading, load] as const,
     <>
       {/* <Props {...obj}/> */}
       {/* <Props names={namelist} /> */}
@@ -301,8 +363,8 @@ function App() {
         <Box />
         <User />
       </Context> */}
-      {/* <Refhook/>
-      <Mutable/> */}
+      {/* <Refhook />
+      <Mutable /> */}
       {/* <Login/> */}
       {/* <Private isLoggedIn={true} Component={Profile}/> */}
       {/* <List
@@ -392,21 +454,31 @@ function App() {
       >
         {" "}
       </Generics> */}
+      {/* 
+      <Test
+        data={[
+          {
+            firstName: "Harsh",
+            lastName: "Savaliya",
+          },
+          {
+            firstName: "Karan",
+            lastName: "Dudhat",
+          },
+          {
+            firstName: "jay",
+            lastName: "Dhameliya",
+          },
+        ]}
+      />
+       */}
 
-      {/* <Test data={[
-        {
-          firstName:"Harsh",
-          lastName:"Savaliya"
-        },
-        {
-          firstName:"Karan",
-          lastName:"Dudhat"
-        },
-        {
-          firstName:"jay",
-          lastName:"Dhameliya"
-        },
-      ]}/> */}
+      {/* <Selecte values={leptops} onChange={(value) => console.log(value)} /> */}
+      {/* <Never name={"Hello I am harsh.....!"} email={"harshsavaliya250@gmail.com"}>
+        Hii I am Children of Never
+        </Never> */}
+
+        <Form/>
     </>
   );
 }

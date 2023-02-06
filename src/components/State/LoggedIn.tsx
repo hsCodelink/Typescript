@@ -6,7 +6,7 @@ type AuthUser = {
 };
 
 const LoggedIn = () => {
-  //   const [user, setUser] = useState<AuthUser | null>(null);
+    // const [user, setUser] = useState<AuthUser | null>(null);
   const [user, setUser] = useState({} as AuthUser);
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const handleLogIn = () => {
